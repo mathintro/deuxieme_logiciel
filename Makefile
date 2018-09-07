@@ -1,22 +1,41 @@
-
 STYLES := css/tufte-css/tufte.css \
 	css/pandoc.css \
 	css/pandoc-solarized.css \
 	css/tufte-extra.css
 
-all: cours.pdf cours.html
+OPTIONS = --toc
+OPTIONS += --filter=pandoc-numbering
+OPTIONS += --filter=pandoc-crossref
+OPTIONS += --pdf-engine pdflatex
 
-cours.pdf: cours.md default.latex
-#	cd figs; ./convert.sh
-	pandoc -s -o  $@ $< --toc --highlight-style kate --filter=pandoc-numbering --number-sections --filter=pandoc-crossref --template=./default.latex --pdf-engine pdflatex
+PDFOPTIONS = --highlight-style kate
+PDFOPTIONS += --number-sections
+PDFOPTIONS += --template=./default.latex
 
-# cours.epub: cours.md default.latex
-# 	pandoc -s -o  $@ $< --toc --highlight-style kate --filter=pandoc-numbering --number-sections --filter=pandoc-crossref --template=./default.latex  --pdf-engine pdflatex -t epub3
 
-cours.html: cours.md Makefile
-#	cd figs; ./convert.sh
-	pandoc -o $@ $< --toc --filter=pandoc-numbering --filter=pandoc-crossref --pdf-engine pdflatex -t html5 -c css/styling.css --self-contained --mathjax=MathJax.js
+HTMLOPTIONS += -t html5
+HTMLOPTIONS += -c css/styling.css
+HTMLOPTIONS += --self-contained
+HTMLOPTIONS += --mathjax=MathJax.js
+
+
+SVG=$(wildcard figs/*.svg)
+PNG=$(SVG:%.svg=%.png)
+MD=$(wildcard *.md)
+HTML=$(MD:%.md=%.html)
+PDF=$(MD:%.md=%.pdf)
+
+
+all: $(PNG) $(HTML) $(PDF)
+
+figs/%.png: figs/%.svg
+	convert \-flatten $< $@
+
+%.pdf: %.md Makefile
+	pandoc -s $(OPTIONS) $(PDFOPTIONS) -o $@ $<
+
+%.html: %.md Makefile
+	pandoc -s $(OPTIONS) $(HTMLOPTIONS) -o $@ $<
 
 clean:
-	rm -rf cours.pdf cours.html cours.epub
-
+	rm -rf *.html *.pdf
