@@ -9,7 +9,7 @@ addons:
 before_install:
   - sudo add-apt-repository -y ppa:jonathonf/python-2.7
   - sudo apt-get update
-  - sudo apt-get install python2.7  librsvg
+  - sudo apt-get install python2.7  librsvg2-bin
 install:
   - wget https://github.com/jgm/pandoc/releases/download/2.0.6/pandoc-2.0.6-1-amd64.deb
   - sudo dpkg -i pandoc-2.0.6-1-amd64.deb
