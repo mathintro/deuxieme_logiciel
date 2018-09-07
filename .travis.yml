@@ -25,12 +25,12 @@ install:
 cache:
   - pip
 script:
-  - cd figs
-  - "./convert.sh"
-  - cd ..
+  # - cd figs
+  # - "./convert.sh"
+  # - cd ..
   - make
-  - make -C exercices
-  - make -C tp
+  # - make -C exercices
+  # - make -C tp
 deploy:
   provider: releases
   api_key:
