@@ -93,8 +93,8 @@ On a donc ici que $\real$ est le domaine de définition et d'arrivée de $f$. En
 
 Une fonction polynomiale de $\real\rightarrow\real$ de degré $n\in\natural$ est une fonction du genre
 \begin{align}
-&f:X\rightarrow Y,\\
-&f\rightarrow a_0+a_1\cdot x+a_2\cdot x^2+\dots+a_n\cdot x^n,
+&p_n:X\rightarrow Y,\\
+&p_n\rightarrow a_0+a_1\cdot x+a_2\cdot x^2+\dots+a_n\cdot x^n,
 \end{align}
 où $\{a_i\}_{i=0}^n\in\real$ sont des coefficients réels.
 
@@ -131,3 +131,21 @@ dans tout l'intervalle $[x_0,x_n]$ et passant par tous les points $p_i$ (voir @f
 ![La fonction d'interpolation $f(x)$ passant par les six paires de points $(x_0,p_0)$, ..., $(x_5,p_5)$.](figs/points_int.png){#fig:points_int width=100%}
 
 La fonction $f(x)$ n'est pas unique et il existe différents moyens de déterminer ces fonctions qui peuvent être plus ou moins complexes.
+Dans les sections qui suivent, nous allons en voir quelques unes qui sont toutes basées sur les interpolations polynomiales.  C'est-à-dire,
+sur une fonction $f(x)$ interpolante qui sera de la forme
+\begin{equation}
+p_n(x)=a_0+a_1\cdot x+a_2\cdot x^2+\dots+a_n\cdot x^n,
+\end{equation}
+et où tout le jeu consiste à trouver les valeurs des $\{a_i\}_{i=0}^n$.
+
+## Idée naive
+
+L'idée la plus simple que nous pouvons avoir pour déterminer un polynôme interpolant est 
+d'écrire le système d'équations suivant
+\begin{align}
+p_n(x_0)=y_0&=a_0+a_1x_0+\dots+a_nx_0,\\
+p_n(x_1)=y_1&=a_0+a_1x_1+\dots+a_nx_1,\\
+\cdots
+p_n(x_n)=y_n&=a_n+a_1x_n+\dots+a_nx_n.
+\end{align}
+
