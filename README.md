@@ -2,7 +2,7 @@
 
 # Cours de mathématiques pour étudiants en logiciel ITI (2ème année)
 
-Ce projet contient la tentative de polycopié du cours de Mathématiques pour la filière ITI de hepia. Vous pouvez accéder au polycopié dans votre navigateur en cliquant sur [`ce lien`](https://mathintro.github.io/linearalgebra/). 
+Ce projet contient la tentative de polycopié du cours de Mathématiques pour la filière ITI de hepia. Vous pouvez accéder au polycopié dans votre navigateur en cliquant sur [`ce lien`](https://mathintro.github.io/deuxieme_logiciel/). 
 
 # Production d'un pdf
 
@@ -48,10 +48,17 @@ sudo pip install -U pip panflute pandocfilters  pandoc-numbering
 
 Pour plus d'information voir le [site](https://pypi.python.org/pypi/pandoc-numbering).
 
-## Des packages latex suivant (pour ubuntu ou debian-like)
+## Des packages latex suivant 
+
+### Pour ubuntu ou debian-like
 
 ```sudo apt-get install texlive-latex-recommended lmodern texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-french```
 
+### Pour les distributions basées sur Arch Linux (Manjaro, ...)
+
+```bash
+sudo pacman -Sy texlive-bin texlive-core texlive-latexextra texlive-science texlive-fontsextra texlive-formatsextra
+```
 
 ## License
 
