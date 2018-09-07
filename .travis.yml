@@ -5,7 +5,7 @@ addons:
   apt:
     packages:
     - texlive-latex-recommended lmodern texlive-fonts-recommended texlive-latex-extra
-      texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-french svg2pdf
+      texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-french  rsvg-convert
 before_install:
   - sudo add-apt-repository -y ppa:jonathonf/python-2.7
   - sudo apt-get update
