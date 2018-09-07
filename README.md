@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mathintro/linearalgebra.svg?branch=master)](https://travis-ci.org/mathintro/linearalgebra)
+[![Build Status](https://travis-ci.org/mathintro/deuxieme_logiciel.svg?branch=master)](https://travis-ci.org/mathintro/linearalgebra)
 
 # Cours de mathématiques pour étudiants en logiciel ITI (2ème année)
 
