@@ -50,6 +50,7 @@ deploy:
     - cours.html 
   skip_cleanup: true
   keep-history: true
+  github-token: $GH_TOKEN
   on:
     branch: master
     all_branches: true
