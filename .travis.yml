@@ -26,19 +26,20 @@ cache:
 - pip
 script:
 - make
-# after_deploy: |
-#   git config --global user.email "travis@travis-ci.COM"
-#   git config --global user.name "Travis CI"
-#   cd "$TRAVIS_BUILD_DIR"
-#   git clone https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
-#   cd mathintro.github.io
-#   # This generates a `web` directory containing the website.
-#   cp ../cours.html deuxieme_logiciel/index.html
-#   git add deuxieme_logiciel/index.html
-#   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
-#   # Make sure to make the output quiet, or else the API token will leak!
-#   # This works because the API key can replace your password.
-#   git push --quiet https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
+after_deploy: |
+  echo ${GH_TOKEN}
+  git config --global user.email "travis@travis-ci.com"
+  git config --global user.name "Travis CI"
+  cd "$TRAVIS_BUILD_DIR"
+  git clone https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
+  cd mathintro.github.io
+  # This generates a `web` directory containing the website.
+  cp ../cours.html deuxieme_logiciel/index.html
+  git add deuxieme_logiciel/index.html
+  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+  # Make sure to make the output quiet, or else the API token will leak!
+  # This works because the API key can replace your password.
+  git push --quiet https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
 env:
   global:
     secure: LttYYeKnFjyRKG3rEkBDYk/I2uiGoRKhhzvTesvKLsyfEfFNJaoRQx+KQ3bwvauVLfISgdAY8BGfEOE4BMF9jC7T9NV1Mu6KrfP6cEVoK7K/mwLMAQFwusgdUmEX5RwHdBTAip4MsDh9cT1nqnWqX6G5YXDDCWbSjfCd5EW41fDIRTGhdgOWq3aqt8ETcteuaXNhaLwlfEQWL9e6w79LF+lfySxKe673/KJmhN+vzFXGMzWwptbhySoqfgvn2hW2HAM4m7ApRBHzXFEvZIOXYm+PukOT8IFlaviAr2FbBBifFJmncjj9xZKVPJqLug3naDUaIYAhWDoucZqdwg2V3hzJQDbKncewZP+pUJwgLzoFXEZBCIvqfXKIVc4QwEbeDeepNDMmk89X+u4X6Prd1u4nTrEkUVA/PeJYFWmRiOlVuQvJxdVvAmHWHndeVgz/XnpoeFcCHmcu9rRNtyDxYECYXHd+bPzUNnwked1mqxUOuR4f/ogblO+ah7doLF/54MpWNreaBUj/mnCYj+cVe9+xqTCk2Yy2KMiD6l8nXLHbC2EIloL0NPDEKrZO52JBznFKedPEhMpYgonFgwsskBpuo7WuclVpg/YiMC5nYjpvUFhG2KxPg6+LMbMP2GWdyd46IJ3URo9qC/HLAVOqnqYe4xqO3JZd59lJDzRUF4k=
@@ -46,12 +47,9 @@ deploy:
   provider: pages
   api_key:
     secure: QOkajm1t++gYUKg8YJirmW/7C4UvU+xGcvieICfxSyTrMQQw+bopVbYFwTsP2qmJOUGdhdTmh8ngYWh7WFeTdwWqA2fZt4dr8jt7g/z+gI5ViTfkTCHmbNLvIUuG/vUK4Gy00iO/VGiZcEogZZqF2dQTu1j/WRk0czJRP5l9iys/4U6Q3RbS5HM6GwC8kZjpGWU2MnNByxXWS7ckGH/4z6XZZ0risSi+oGp9aRhO0iwEU+NKMjgkhnc/YLmAO28LrWOkGma42G8lYHu/oQqBUm8SdGIES0zxFM4TbIMPuFgCt+SLabv8Xn/Nri8WE7vc4b7Y5yLvZEVaf98qNicmJZcGq6/xCi4f6uFJzqCGWniDSskf5oBzJzWcd8KEWtDRAMdsKUZWwJS4Gg7ZBPUPXkYYly9UuFtYLsW35xpTmL1Sk2vS/2VCur7GYIRmofGzAcOooynIr++pg5y5W4jnVcx+FzhlLoqwm/RGANXFzblwkuz+ScoNPXK/HfXOAlNqLrIBGy5jcze7+HhidS5uqmo7mgbusegL69tkzNuWdj6BGGjdHC9L8nUilEccZKro3cMMkzpdUiij+iSnXrh8xJ8qWo+uLwtYzuXof2vxrPooNsEDogMu7cVhEsVI0WpA+SsTXINCBKumaB3HEnIaYfLYUMHCwSEJ8DLFRG9p1+A=
-  file:
-    - cours.html 
+  file: cours.html cours.pdf
   skip_cleanup: true
-  keep-history: true
-  github-token: $GH_TOKEN
   on:
-    branch: master
-    all_branches: true
+    repo: mathintro/deuxieme_logiciel
     tags: true
+    all_branches: true
