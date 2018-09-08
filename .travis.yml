@@ -47,6 +47,9 @@ deploy:
   provider: releases
   api_key:
     secure: VktZE8/zUOMOzOjAie1ePOqbRbH53jgGt0abzK9Cc8Hpq9qH1nleBFSU/Dpypxrs3d/AtpvZTTQRFG3OsDqEyOewWOLmaG3DSVIyGz+Tva4KFNNcROVvzbsldnG1hx2MqX0icMOZIdTa+l2vCN08ix6mMsQUJmWswA6YB3SSvJiJBwmC36692B1ac6zmDG7n6GEFRR7PpTNA8x3BAMM2CUO8rrkiWTPmD2oL0fFrMmWdtDEoP/QGFBaRc7sSjzR3vfhVFZOoT/lpk6V6WZuBgwRuNs2yDola2GAmIgJzaT8Ngg/+Sdb2jgYVVoI3z68ijKyGkRY+G4CI4NVHMkm5xriAoet7MqE20F9/gfQ7RO9sm7Ybpw1BwaME2kKHss9Q+IH0jgHBE+fWNFLMG4yR63w7icd6E/fTQ0Pes8FzQiq/QBKrHYAgigDzpjG1t7dqX+lB9fVmQkyy/OnaQs8va0RncYDnw7i7rjHP8DoZdBWYFUZCIvh4Y8owY5bMv0AouBF3rS/sDrd8/+VlFr9mBCY6tRzGN8LIXCF2dYZHv/wmIED51MPrueYA4ZZkDV2DNZ4Oe99LBDH7NNYoIQEeW/eKcyxgJkVom+UEvyrsWazrihRe9lYW/qpeFuDItuvDmu+ZugoK13j1EmVA6Lshl2YlpyZkPiSMOInPsbMrjwM=
-  file: cours.html cours.pdf
+  file: 
+    - cours.pdf
+    - cours.html
+  skip_cleanup: true
   on:
     repo: mathintro/deuxieme_logiciel
