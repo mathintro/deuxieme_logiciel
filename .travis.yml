@@ -51,4 +51,4 @@ deploy:
   on:
     repo: mathintro/deuxieme_logiciel
     tags: true
-    all_bracnhes: true
+    all_branches: true
