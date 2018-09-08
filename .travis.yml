@@ -40,7 +40,6 @@ after_deploy: |
   # Make sure to make the output quiet, or else the API token will leak!
   # This works because the API key can replace your password.
   git push --quiet https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
-<<<<<<< HEAD
 env:
   global:
   - secure: ufjDIpBjba6D4DFl+D53RS61b4E8NZsxqXsiPRwQv+lJZsWjKeTMegSveO7Z4A2S/m7tZMLYA/R44yN7S5SJ6W4qw7f9h9ymlWojBiSuRNUjsh0IVWOwFdVaocxJVFV8bv55JAGEmzzh1Wee8UbLzZqqnzC5xHNqUVFKXcVJgrn6pVyfwACls/tW7ybpIXwzlbB/iHekut3ekD90w/y0zhGSVWfX4ywAwFmSUfE2G9qtHI/qDPTAgGYTtTcQkl92wbi+6jh3Ucnf+AZxbLNcYgUB6lYtjnzLlwJzBWGSUWQamjwyPKtsZSH1dqLvKWuOOkDwqAzAHFi7vMDY/BMeAd4qY1SS4jb35ZBG5NR5GEIjRvlJUZBtrUSudz+MnBVUhU/DL2qu5UpPDotKiQ33lQBMXVRNUCFGPxHviqd1UnBdhlVuonYuEdrBXdk1rVHFHf7/AMF1ivUVLAvQAiKLmJWc2mUpY68YXe0RbWSwlCyAu+dQf173uNXlhqp2AZ9OJt+n6TVl0AXp2xic+SB+p89sqPNiZw5ky99FM5XV/7hLbA+DEnDTZicFtnpLvP9CfBiQS5Rw00P8DkaZPM280IFNiTqKV2lyXY51uoLgzUwYBX2Hd1hbm8de6wWUXW5g3giYNYQwumGqcFapTMn6wh8ubOa+RWVL4m5OFRwOwC0=
