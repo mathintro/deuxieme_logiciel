@@ -39,7 +39,7 @@ after_deploy: |
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
   # Make sure to make the output quiet, or else the API token will leak!
   # This works because the API key can replace your password.
-  git push --quiet https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
+  git push --quiet https://d8bc97991c18ef85505fdc2aeff95a67cd4c6263@github.com/mathintro/mathintro.github.io.git
 env:
   global:
     secure: LttYYeKnFjyRKG3rEkBDYk/I2uiGoRKhhzvTesvKLsyfEfFNJaoRQx+KQ3bwvauVLfISgdAY8BGfEOE4BMF9jC7T9NV1Mu6KrfP6cEVoK7K/mwLMAQFwusgdUmEX5RwHdBTAip4MsDh9cT1nqnWqX6G5YXDDCWbSjfCd5EW41fDIRTGhdgOWq3aqt8ETcteuaXNhaLwlfEQWL9e6w79LF+lfySxKe673/KJmhN+vzFXGMzWwptbhySoqfgvn2hW2HAM4m7ApRBHzXFEvZIOXYm+PukOT8IFlaviAr2FbBBifFJmncjj9xZKVPJqLug3naDUaIYAhWDoucZqdwg2V3hzJQDbKncewZP+pUJwgLzoFXEZBCIvqfXKIVc4QwEbeDeepNDMmk89X+u4X6Prd1u4nTrEkUVA/PeJYFWmRiOlVuQvJxdVvAmHWHndeVgz/XnpoeFcCHmcu9rRNtyDxYECYXHd+bPzUNnwked1mqxUOuR4f/ogblO+ah7doLF/54MpWNreaBUj/mnCYj+cVe9+xqTCk2Yy2KMiD6l8nXLHbC2EIloL0NPDEKrZO52JBznFKedPEhMpYgonFgwsskBpuo7WuclVpg/YiMC5nYjpvUFhG2KxPg6+LMbMP2GWdyd46IJ3URo9qC/HLAVOqnqYe4xqO3JZd59lJDzRUF4k=
@@ -50,6 +50,5 @@ deploy:
   file: cours.html cours.pdf
   skip_cleanup: true
   on:
-    repo: mathintro/deuxieme_logiciel
     tags: true
     all_branches: true
