@@ -47,5 +47,8 @@ deploy:
   api_key:
     secure: QOkajm1t++gYUKg8YJirmW/7C4UvU+xGcvieICfxSyTrMQQw+bopVbYFwTsP2qmJOUGdhdTmh8ngYWh7WFeTdwWqA2fZt4dr8jt7g/z+gI5ViTfkTCHmbNLvIUuG/vUK4Gy00iO/VGiZcEogZZqF2dQTu1j/WRk0czJRP5l9iys/4U6Q3RbS5HM6GwC8kZjpGWU2MnNByxXWS7ckGH/4z6XZZ0risSi+oGp9aRhO0iwEU+NKMjgkhnc/YLmAO28LrWOkGma42G8lYHu/oQqBUm8SdGIES0zxFM4TbIMPuFgCt+SLabv8Xn/Nri8WE7vc4b7Y5yLvZEVaf98qNicmJZcGq6/xCi4f6uFJzqCGWniDSskf5oBzJzWcd8KEWtDRAMdsKUZWwJS4Gg7ZBPUPXkYYly9UuFtYLsW35xpTmL1Sk2vS/2VCur7GYIRmofGzAcOooynIr++pg5y5W4jnVcx+FzhlLoqwm/RGANXFzblwkuz+ScoNPXK/HfXOAlNqLrIBGy5jcze7+HhidS5uqmo7mgbusegL69tkzNuWdj6BGGjdHC9L8nUilEccZKro3cMMkzpdUiij+iSnXrh8xJ8qWo+uLwtYzuXof2vxrPooNsEDogMu7cVhEsVI0WpA+SsTXINCBKumaB3HEnIaYfLYUMHCwSEJ8DLFRG9p1+A=
   file: cours.html cours.pdf
+  skip_cleanup: true
   on:
     repo: mathintro/deuxieme_logiciel
+    tags: true
+    all_bracnhes: true
