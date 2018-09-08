@@ -52,3 +52,5 @@ deploy:
   keep-history: true
   on:
     branch: master
+    all_branches: true
+    tags: true
