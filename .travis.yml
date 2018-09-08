@@ -52,3 +52,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: mathintro/deuxieme_logiciel
+    all_branches: true
