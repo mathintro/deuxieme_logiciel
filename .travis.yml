@@ -31,7 +31,7 @@ after_deploy: |
   git config --global user.email "travis@travis-ci.com"
   git config --global user.name "Travis CI"
   cd "$TRAVIS_BUILD_DIR"
-  git clone https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
+  git clone https://${GITHUB_TOKEN}@github.com/mathintro/mathintro.github.io.git
   cd mathintro.github.io
   # This generates a `web` directory containing the website.
   cp ../cours.html deuxieme_logiciel/index.html
@@ -39,10 +39,10 @@ after_deploy: |
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
   # Make sure to make the output quiet, or else the API token will leak!
   # This works because the API key can replace your password.
-  git push --quiet https://d8bc97991c18ef85505fdc2aeff95a67cd4c6263@github.com/mathintro/mathintro.github.io.git
+  git push --quiet https://${GITHUB_TOKEN}@github.com/mathintro/mathintro.github.io.git
 env:
   global:
-    secure: LttYYeKnFjyRKG3rEkBDYk/I2uiGoRKhhzvTesvKLsyfEfFNJaoRQx+KQ3bwvauVLfISgdAY8BGfEOE4BMF9jC7T9NV1Mu6KrfP6cEVoK7K/mwLMAQFwusgdUmEX5RwHdBTAip4MsDh9cT1nqnWqX6G5YXDDCWbSjfCd5EW41fDIRTGhdgOWq3aqt8ETcteuaXNhaLwlfEQWL9e6w79LF+lfySxKe673/KJmhN+vzFXGMzWwptbhySoqfgvn2hW2HAM4m7ApRBHzXFEvZIOXYm+PukOT8IFlaviAr2FbBBifFJmncjj9xZKVPJqLug3naDUaIYAhWDoucZqdwg2V3hzJQDbKncewZP+pUJwgLzoFXEZBCIvqfXKIVc4QwEbeDeepNDMmk89X+u4X6Prd1u4nTrEkUVA/PeJYFWmRiOlVuQvJxdVvAmHWHndeVgz/XnpoeFcCHmcu9rRNtyDxYECYXHd+bPzUNnwked1mqxUOuR4f/ogblO+ah7doLF/54MpWNreaBUj/mnCYj+cVe9+xqTCk2Yy2KMiD6l8nXLHbC2EIloL0NPDEKrZO52JBznFKedPEhMpYgonFgwsskBpuo7WuclVpg/YiMC5nYjpvUFhG2KxPg6+LMbMP2GWdyd46IJ3URo9qC/HLAVOqnqYe4xqO3JZd59lJDzRUF4k=
+  - secure: NgJhUibG2X1K/3cqiYLALq+No0dFFGyWyAH3Q6j3Nd7ae39MI6nzs11fclf6jauKGOFciU8CMVD8I0whgngAFe+LDcoUoSLYxg9rRQHZjz4E8UyeRrJRtqPrAdOJY15MU5DZqMlKzICNkZ+Jb75ohSEBNJnw0h0QPDXWV4L6bNm7DWGuhX4RvbjDSAtd8e+tx/Sas4EECjDX3vGdRxZacHPE0d1Nw1FCYboRa0OG4N6IqiC09+/f0o7Bga/eTZI/9wp89/fcq9BqVeuyH/21idXJ4S2etuXIDB+Zi3gqpPVFBBQKG612JM8tozLjQlesvj7nGwEis5M7g3b2ps/IFBZYMfju8vSv7x7Lk94XyPkei/mSxZCHwo6PFRqXPla9MQ6RMDo5pp4nqSwW1DGoA6UkWVpAQPuuFHnyKE8r+L97gBt9pLOEDgEwg0N9f8w10aFdywdsRR9bSuzyf+QKDU48TOGRjlB9UVM8uK93cjdlisx1J5wp5ZbP/ZJo7DVnmAhIoux4iK5MondXaXOnITGGdp5KvA6TBsJ8FoBIWZ6l9nloKLpJMzxMJ81HCpeZv+jnPI+w+SxfvJP0aK5kSaMaJLgRv1klNwZ4VmpfImdenx/q72u5xfruhYqYIodSAsDi9/TY+50NhomJtgCfr2WI5d2G9yvwh6CCt5m1hAQ=
 deploy:
   provider: releases
   api_key:
