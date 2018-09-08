@@ -31,7 +31,7 @@ after_deploy: |
   git config --global user.email "travis@travis-ci.com"
   git config --global user.name "Travis CI"
   cd "$TRAVIS_BUILD_DIR"
-  git clone https://${GITHUB_TOKEN}@github.com/mathintro/mathintro.github.io.git
+  git clone https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
   cd mathintro.github.io
   # This generates a `web` directory containing the website.
   cp ../cours.html deuxieme_logiciel/index.html
@@ -39,16 +39,17 @@ after_deploy: |
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
   # Make sure to make the output quiet, or else the API token will leak!
   # This works because the API key can replace your password.
-  git push --quiet https://${GITHUB_TOKEN}@github.com/mathintro/mathintro.github.io.git
+  git push --quiet https://${GH_TOKEN}@github.com/mathintro/mathintro.github.io.git
 env:
   global:
-  - secure: NgJhUibG2X1K/3cqiYLALq+No0dFFGyWyAH3Q6j3Nd7ae39MI6nzs11fclf6jauKGOFciU8CMVD8I0whgngAFe+LDcoUoSLYxg9rRQHZjz4E8UyeRrJRtqPrAdOJY15MU5DZqMlKzICNkZ+Jb75ohSEBNJnw0h0QPDXWV4L6bNm7DWGuhX4RvbjDSAtd8e+tx/Sas4EECjDX3vGdRxZacHPE0d1Nw1FCYboRa0OG4N6IqiC09+/f0o7Bga/eTZI/9wp89/fcq9BqVeuyH/21idXJ4S2etuXIDB+Zi3gqpPVFBBQKG612JM8tozLjQlesvj7nGwEis5M7g3b2ps/IFBZYMfju8vSv7x7Lk94XyPkei/mSxZCHwo6PFRqXPla9MQ6RMDo5pp4nqSwW1DGoA6UkWVpAQPuuFHnyKE8r+L97gBt9pLOEDgEwg0N9f8w10aFdywdsRR9bSuzyf+QKDU48TOGRjlB9UVM8uK93cjdlisx1J5wp5ZbP/ZJo7DVnmAhIoux4iK5MondXaXOnITGGdp5KvA6TBsJ8FoBIWZ6l9nloKLpJMzxMJ81HCpeZv+jnPI+w+SxfvJP0aK5kSaMaJLgRv1klNwZ4VmpfImdenx/q72u5xfruhYqYIodSAsDi9/TY+50NhomJtgCfr2WI5d2G9yvwh6CCt5m1hAQ=
+  - secure: ufjDIpBjba6D4DFl+D53RS61b4E8NZsxqXsiPRwQv+lJZsWjKeTMegSveO7Z4A2S/m7tZMLYA/R44yN7S5SJ6W4qw7f9h9ymlWojBiSuRNUjsh0IVWOwFdVaocxJVFV8bv55JAGEmzzh1Wee8UbLzZqqnzC5xHNqUVFKXcVJgrn6pVyfwACls/tW7ybpIXwzlbB/iHekut3ekD90w/y0zhGSVWfX4ywAwFmSUfE2G9qtHI/qDPTAgGYTtTcQkl92wbi+6jh3Ucnf+AZxbLNcYgUB6lYtjnzLlwJzBWGSUWQamjwyPKtsZSH1dqLvKWuOOkDwqAzAHFi7vMDY/BMeAd4qY1SS4jb35ZBG5NR5GEIjRvlJUZBtrUSudz+MnBVUhU/DL2qu5UpPDotKiQ33lQBMXVRNUCFGPxHviqd1UnBdhlVuonYuEdrBXdk1rVHFHf7/AMF1ivUVLAvQAiKLmJWc2mUpY68YXe0RbWSwlCyAu+dQf173uNXlhqp2AZ9OJt+n6TVl0AXp2xic+SB+p89sqPNiZw5ky99FM5XV/7hLbA+DEnDTZicFtnpLvP9CfBiQS5Rw00P8DkaZPM280IFNiTqKV2lyXY51uoLgzUwYBX2Hd1hbm8de6wWUXW5g3giYNYQwumGqcFapTMn6wh8ubOa+RWVL4m5OFRwOwC0=
 deploy:
   provider: releases
   api_key:
-    secure: QOkajm1t++gYUKg8YJirmW/7C4UvU+xGcvieICfxSyTrMQQw+bopVbYFwTsP2qmJOUGdhdTmh8ngYWh7WFeTdwWqA2fZt4dr8jt7g/z+gI5ViTfkTCHmbNLvIUuG/vUK4Gy00iO/VGiZcEogZZqF2dQTu1j/WRk0czJRP5l9iys/4U6Q3RbS5HM6GwC8kZjpGWU2MnNByxXWS7ckGH/4z6XZZ0risSi+oGp9aRhO0iwEU+NKMjgkhnc/YLmAO28LrWOkGma42G8lYHu/oQqBUm8SdGIES0zxFM4TbIMPuFgCt+SLabv8Xn/Nri8WE7vc4b7Y5yLvZEVaf98qNicmJZcGq6/xCi4f6uFJzqCGWniDSskf5oBzJzWcd8KEWtDRAMdsKUZWwJS4Gg7ZBPUPXkYYly9UuFtYLsW35xpTmL1Sk2vS/2VCur7GYIRmofGzAcOooynIr++pg5y5W4jnVcx+FzhlLoqwm/RGANXFzblwkuz+ScoNPXK/HfXOAlNqLrIBGy5jcze7+HhidS5uqmo7mgbusegL69tkzNuWdj6BGGjdHC9L8nUilEccZKro3cMMkzpdUiij+iSnXrh8xJ8qWo+uLwtYzuXof2vxrPooNsEDogMu7cVhEsVI0WpA+SsTXINCBKumaB3HEnIaYfLYUMHCwSEJ8DLFRG9p1+A=
-  file: cours.html cours.pdf
-  skip_cleanup: true
+    secure: KZ9W0Qya8ozaoN+0Ei4mSRBKwnSwYcq/O7UZzc9HXo7T6nEShtAGkgGXNXbdbd3LMvetsUOzRyR/77bOjOKq3p1/UiV6bHDZ/FogWJg4iEeZJeLFss87dEGMfmdCTZLOG7I0h4GB0HzdAmyIUNWEC1bdQRa65q4lQ+7uS46kRyhzpY2e8sjBzuMf/u1cwtFw4UNWkHYT27u97J23CE0u7aCw4NYH1/3GnEh6O1+OtcGDDkKaTWqEGa8VUw+U/Q7JS6tNQbuR6H51lnROc9En/8Mbd5UAadJmO8yOCRskjY/CVk4Dg6Dub1q7HEPRqAEpyuxyD4MXxyfr7OJ5gjLIhN0wPtII3O3opNYbvTWEqTKvFw4oMkxsHtnx7qcCwdZpumgz5MyTwSPkSD9MvDvC8VJrX34DCAGtzK+tNJVLfYa0/CeNtKaUPS3ay0dc4piL9N6DhYLKwiNYMjRiofDXj89PPMK8cBAhKORbRPk4rNzrqwyDlGCoehSrlNvxaPMGwbKub0HOvniYl4JV6NKkqOBfY/lFKmP+cN+a3nK/RsqG42Hl2SoY2CWJ8NN2qt0pP3pCzV9zMq3Y5xbUynN0c+rk/PVZjM1PmItPrWxIaU41DKlBEhC0Mcp4qjPcAKWILycJ3NQ/bvUzgS2d0m7/d2zByDiL4dPq+bi0DUp7m+0=
+  file: cours.html
   on:
+    repo: mathintro/deuxieme_logiciel
     tags: true
     all_branches: true
+  skip_cleanup: true
